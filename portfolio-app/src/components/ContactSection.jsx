@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import profileImg from "../assets/profile.png";
+import { SOCIAL_LINKS } from "../socialLinks";
 
 // ─────────────────────────────────────────────────────────────
 //  EmailJS Configuration
@@ -129,7 +130,7 @@ export default function ContactSection() {
             <div className="flex flex-wrap gap-x-6 gap-y-4">
               {/* Phone */}
               <a
-                href="tel:+9779741710013"
+                href={SOCIAL_LINKS.phone}
                 className="group flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity"
               >
                 <span className="flex items-center justify-center w-7 h-7 border border-primary/30 text-primary shrink-0">
@@ -148,7 +149,7 @@ export default function ContactSection() {
 
               {/* Email */}
               <a
-                href="mailto:sijanchhetri102@gmail.com"
+                href={SOCIAL_LINKS.email}
                 className="group flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity"
               >
                 <span className="flex items-center justify-center w-7 h-7 border border-primary/30 text-primary shrink-0">
@@ -167,7 +168,7 @@ export default function ContactSection() {
 
               {/* LinkedIn */}
               <a
-                href="https://www.linkedin.com/in/sijan-chhetri"
+                href={SOCIAL_LINKS.linkedin}
                 target="_blank"
                 rel="noreferrer"
                 className="group flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity"

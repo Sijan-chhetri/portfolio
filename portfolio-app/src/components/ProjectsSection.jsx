@@ -1,4 +1,13 @@
 import { useState, useEffect } from "react";
+import swaadghar from "../assets/swaadghar.jpeg";
+import swaadghar1 from "../assets/swaadghar2.jpeg";
+import swaadghar2 from "../assets/swaadghar3.jpeg";
+import dainiki from "../assets/dainiki.jpeg";
+import dainiki1 from "../assets/dainiki1.jpeg";
+import dainiki2 from "../assets/dainiki2.jpeg";
+import hisabkitab from "../assets/hisabkitab.jpeg";
+import hisabkitab1 from "../assets/hisabkitab1.jpeg";
+import hisabkitab2 from "../assets/hisabkitab2.jpeg";
 
 const projects = [
   {
@@ -26,10 +35,10 @@ const projects = [
     stagger: true,
   },
   {
-    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+    img: dainiki,
     galleryImgs: [
-      "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80",
-      "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80",
+      dainiki1,
+      dainiki2,
     ],
     tag: "Node.js · Express · PostgreSQL",
     title: "Dainiki — Task Management System",
@@ -38,10 +47,10 @@ const projects = [
     stagger: false,
   },
   {
-    img: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80",
+    img: hisabkitab,
     galleryImgs: [
-      "https://images.unsplash.com/photo-1579621970795-87facc2f976d?w=800&q=80",
-      "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80",
+      hisabkitab1,
+      hisabkitab2,
     ],
     tag: "Flutter · Firebase · Data Visualization",
     title: "Hisab Kitab — Personal Finance Tracker",
@@ -79,10 +88,10 @@ const projects = [
 
   
   {
-    img: "https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=800&q=80",
+    img: swaadghar,
     galleryImgs: [
-      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80",
-      "https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=800&q=80",
+      swaadghar1,
+      swaadghar2,
     ],
     tag: "Flutter · Local Storage · Text-to-Speech",
     title: "SwaadGhar — Recipe Discovery App",

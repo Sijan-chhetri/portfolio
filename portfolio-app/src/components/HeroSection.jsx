@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import profileImg from "../assets/profile.png";
 import cvFile from "../assets/cv.pdf";
+import { SOCIAL_LINKS } from "../socialLinks";
 
 export default function HeroSection() {
   useEffect(() => {
@@ -121,7 +122,7 @@ export default function HeroSection() {
         <div className="flex flex-col space-y-8 items-center">
           {/* Instagram */}
           <a
-            href="https://instagram.com/"
+            href={SOCIAL_LINKS.instagram}
             target="_blank"
             rel="noreferrer"
             className="text-primary/40 hover:text-primary hover:scale-125 transition-all duration-300"
@@ -134,7 +135,7 @@ export default function HeroSection() {
 
           {/* GitHub */}
           <a
-            href="https://github.com/Sijan-chhetri"
+            href={SOCIAL_LINKS.github}
             target="_blank"
             rel="noreferrer"
             className="text-primary/40 hover:text-primary hover:scale-125 transition-all duration-300"
@@ -147,7 +148,7 @@ export default function HeroSection() {
 
           {/* LinkedIn */}
           <a
-            href="https://www.linkedin.com/in/sijan-chhetri"
+            href={SOCIAL_LINKS.linkedin}
             target="_blank"
             rel="noreferrer"
             className="text-primary/40 hover:text-primary hover:scale-125 transition-all duration-300"
