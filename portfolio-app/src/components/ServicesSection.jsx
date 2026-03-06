@@ -2,17 +2,32 @@ const services = [
   {
     icon: "terminal",
     title: "Back-End Development",
-    desc: "Scalable, secure server-side applications built with Python and Django — from RESTful APIs to complex business logic and database design.",
+    desc: "Scalable and secure server-side applications built with Python and Django. From RESTful APIs to complex business logic and database architecture.",
   },
   {
     icon: "web",
     title: "Front-End Development",
-    desc: "Responsive, performant user interfaces with React and TypeScript, designed for clarity, speed, and an exceptional user experience.",
+    desc: "Responsive and modern user interfaces using React and TypeScript, focused on performance, accessibility, and clean design systems.",
   },
   {
     icon: "hub",
-    title: "Full-Stack Integration",
-    desc: "End-to-end feature delivery — connecting Django back-ends to React front-ends with clean API contracts, authentication, and deployment pipelines.",
+    title: "Full-Stack Development",
+    desc: "Complete web solutions connecting robust Django back-ends with modern React front-ends, ensuring smooth data flow and reliable functionality.",
+  },
+  {
+    icon: "mobile_friendly",
+    title: "Mobile App Development",
+    desc: "Cross-platform mobile applications built with Flutter, creating smooth and responsive apps for both Android and iOS devices.",
+  },
+  {
+    icon: "api",
+    title: "API Development & Integration",
+    desc: "Designing secure REST APIs and integrating third-party services such as payment gateways, authentication systems, and external platforms.",
+  },
+  {
+    icon: "cloud",
+    title: "Deployment & DevOps",
+    desc: "Deploying and maintaining applications using Docker, Git workflows, and cloud platforms with optimized performance and scalable infrastructure.",
   },
 ];
 

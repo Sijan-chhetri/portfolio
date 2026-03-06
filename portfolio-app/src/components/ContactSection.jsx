@@ -119,11 +119,73 @@ export default function ContactSection() {
 
         {/* Right: form */}
         <div className="bg-stone-50/50 dark:bg-stone-900/20 p-8 lg:p-12 border border-primary/5">
-          <div className="mb-12">
+          <div className="mb-8">
             <h3 className="font-garamond text-3xl font-light mb-2 text-slate-800 dark:text-[#f8f5f0]">
               Get In Touch
             </h3>
-            <div className="h-px w-12 bg-primary"></div>
+            <div className="h-px w-12 bg-primary mb-8"></div>
+
+            {/* Contact info row */}
+            <div className="flex flex-wrap gap-x-6 gap-y-4">
+              {/* Phone */}
+              <a
+                href="tel:+9779741710013"
+                className="group flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity"
+              >
+                <span className="flex items-center justify-center w-7 h-7 border border-primary/30 text-primary shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.24 1.02l-2.21 2.2z"/>
+                  </svg>
+                </span>
+                <div>
+                  <div className="text-[8px] uppercase tracking-widest text-stone-400 leading-none mb-0.5">Phone</div>
+                  <div className="font-light text-slate-700 dark:text-stone-300 text-xs group-hover:text-primary transition-colors">+977 9741710013</div>
+                </div>
+              </a>
+
+              {/* Divider */}
+              <div className="w-px bg-primary/10 self-stretch hidden sm:block" />
+
+              {/* Email */}
+              <a
+                href="mailto:sijanchhetri102@gmail.com"
+                className="group flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity"
+              >
+                <span className="flex items-center justify-center w-7 h-7 border border-primary/30 text-primary shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+                  </svg>
+                </span>
+                <div>
+                  <div className="text-[8px] uppercase tracking-widest text-stone-400 leading-none mb-0.5">Email</div>
+                  <div className="font-light text-slate-700 dark:text-stone-300 text-xs group-hover:text-primary transition-colors">sijanchhetri102@gmail.com</div>
+                </div>
+              </a>
+
+              {/* Divider */}
+              <div className="w-px bg-primary/10 self-stretch hidden sm:block" />
+
+              {/* LinkedIn */}
+              <a
+                href="https://www.linkedin.com/in/sijan-chhetri"
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity"
+              >
+                <span className="flex items-center justify-center w-7 h-7 border border-primary/30 text-primary shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  </svg>
+                </span>
+                <div>
+                  <div className="text-[8px] uppercase tracking-widest text-stone-400 leading-none mb-0.5">LinkedIn</div>
+                  <div className="font-light text-slate-700 dark:text-stone-300 text-xs group-hover:text-primary transition-colors flex items-center gap-0.5">
+                    sijan-chhetri
+                    <span className="material-symbols-outlined text-[10px]">north_east</span>
+                  </div>
+                </div>
+              </a>
+            </div>
           </div>
 
           <form ref={formRef} onSubmit={handleSubmit} className="space-y-12">
@@ -258,21 +320,7 @@ export default function ContactSection() {
             </div>
           </form>
 
-          {/* Social links */}
-          <div className="mt-16 pt-8 border-t border-primary/10 flex flex-wrap gap-x-12 gap-y-6">
-            {["LinkedIn", "GitHub", "Twitter"].map((social) => (
-              <a
-                key={social}
-                href="#"
-                className="group flex items-center space-x-3 text-[10px] uppercase tracking-widest font-light opacity-60 hover:opacity-100 transition-opacity"
-              >
-                <span className="text-primary group-hover:scale-110 transition-transform">
-                  {social}
-                </span>
-                <span className="material-symbols-outlined text-sm">north_east</span>
-              </a>
-            ))}
-          </div>
+
         </div>
       </div>
     </section>

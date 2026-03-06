@@ -1,26 +1,29 @@
 const experiences = [
   {
-    period: "2023 — Present",
-    title: "Full-Stack Software Engineer",
-    desc: "Building and maintaining production-grade web applications using Python, Django REST Framework, and React. Architecting scalable APIs, optimizing database queries, and leading front-end feature development for a SaaS platform.",
+    period: "Dec 2025 — Present",
+    company: "Elevate Tech",
+    title: "Software Engineer",
+    desc: "Designing and developing scalable web applications and APIs for production environments. Responsible for implementing backend services, optimizing database performance, and collaborating with front-end teams to deliver high-quality features for modern web platforms.",
     label: "Tech Focus",
-    detail: "Django REST Framework, React, PostgreSQL, Docker, AWS deployment.",
+    detail: "Python, Django REST Framework, React, PostgreSQL, Docker, AWS.",
     reverse: false,
   },
   {
-    period: "2022 — 2023",
-    title: "Back-End Developer",
-    desc: "Developed robust RESTful APIs with Django for multiple client projects. Worked closely with front-end teams to integrate APIs, improve system performance, and implement automated testing pipelines using pytest.",
+    period: "Nov 2024 — Feb 2025",
+    company: "Xdezo",
+    title: "Software Engineering Intern",
+    desc: "Completed a software engineering internship at Xdezo where I contributed to backend development and API integrations. Assisted in building RESTful services, debugging application issues, and collaborating with senior developers on real-world production systems.",
     label: "Key Skills",
-    detail: "Python, Django ORM, pytest, CI/CD pipelines, Redis caching.",
+    detail: "Python, Django, REST APIs, Git, Debugging, Agile development.",
     reverse: true,
   },
   {
-    period: "2021 — 2022",
-    title: "Junior React Developer",
-    desc: "Contributed to front-end development of responsive web applications using React and TypeScript. Built reusable component libraries, integrated third-party APIs, and collaborated in an agile team environment.",
-    label: "Achievement",
-    detail: "Delivered 3 client projects on schedule, improving team velocity by 30% through component standardization.",
+    period: "2023 — 2024",
+    company: "Self-Employed",
+    title: "Freelance Web Developer",
+    desc: "Worked with small businesses and startups to develop responsive websites and web applications. Delivered custom solutions including website design, backend integrations, and deployment while managing projects independently.",
+    label: "Core Skills",
+    detail: "React, JavaScript, Django, Website Development, Client Projects.",
     reverse: false,
   },
 ];
@@ -60,9 +63,13 @@ export default function ExperienceSection() {
                   <span className="text-primary font-display italic text-lg mb-2 block">
                     {exp.period}
                   </span>
-                  <h3 className="text-2xl font-display mb-3 text-slate-800 dark:text-[#f8f5f0]">
+                  <h3 className="text-2xl font-display mb-1 text-slate-800 dark:text-[#f8f5f0]">
                     {exp.title}
                   </h3>
+                  <span className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-stone-400 dark:text-stone-500 mb-3 font-medium">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>
+                    {exp.company}
+                  </span>
                   <p className="text-stone-500 dark:text-stone-400 font-light leading-relaxed">
                     {exp.desc}
                   </p>

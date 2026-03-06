@@ -1,4 +1,5 @@
 import profileImg from "../assets/profile.png";
+import cvFile from "../assets/cv.pdf";
 
 export default function AboutSection() {
   return (
@@ -47,7 +48,29 @@ export default function AboutSection() {
 
           {/* Tech stack badges */}
           <div className="flex flex-wrap gap-3 mt-10">
-            {["Python", "Django", "React", "REST APIs", "PostgreSQL", "Docker", "Git", "TypeScript"].map((tech) => (
+            {[
+              "Python",
+              "Django",
+              "Django REST Framework",
+              "React",
+              "Node.js",
+              "Express.js",
+              "Flutter",
+              "JavaScript",
+              "TypeScript",
+              "REST APIs",
+              "PostgreSQL",
+              "MongoDB",
+              "React Native",
+              "Docker",
+              "Git",
+              "GitHub",
+              "HTML",
+              "CSS",
+              "Tailwind CSS",
+              "Linux",
+              "Firebase",
+            ].map((tech) => (
               <span
                 key={tech}
                 className="px-4 py-1.5 border border-primary/30 text-[10px] uppercase tracking-widest text-primary font-medium"
@@ -77,6 +100,20 @@ export default function AboutSection() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Download CV Button */}
+          <div className="mt-12 opacity-0 animate-[fadeInUp_1s_ease-out_1.3s_forwards]">
+            <a
+              href={cvFile}
+              target="_blank"
+              rel="noreferrer"
+              download="Sijan_Katuwal_Chhetri_CV.pdf"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-background-dark font-serif uppercase text-xs tracking-[0.2em] hover:shadow-[0_0_20px_rgba(201,162,39,0.3)] transition-all duration-300 group"
+            >
+              <span className="material-symbols-outlined text-lg group-hover:bounce">download</span>
+              Download My CV
+            </a>
           </div>
         </div>
       </div>
