@@ -1,0 +1,84 @@
+/* ===== Base Reset ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ===== Hero Section ===== */
+.dust-particles {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.5;
+}
+
+.hero-gradient {
+  background: radial-gradient(circle at center, rgba(15,23,42,0.4) 0%, rgba(15,23,42,0.95) 80%);
+}
+
+.portrait-glow {
+  filter: drop-shadow(0 0 40px rgba(201, 162, 39, 0.15));
+}
+
+.letter-spacing-widest {
+  letter-spacing: 0.3em;
+}
+
+/* ===== About Section ===== */
+.luxury-border {
+  border: 1px solid rgba(201, 162, 39, 0.2);
+}
+
+.timeline-line {
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, #C9A227, transparent);
+}
+
+/* Material Symbols thin weight */
+.material-symbols-outlined {
+  font-variation-settings: 'wght' 200, 'opsz' 24;
+}
+
+/* ===== Projects Section ===== */
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+.project-card:hover {
+  box-shadow: 0 0 40px rgba(201, 162, 39, 0.15);
+}
+.old-money-border {
+  border: 1px solid rgba(201, 162, 39, 0.2);
+}
+.ivory-border {
+  border: 1px solid #FAF9F6;
+}
+
+/* ===== Contact Section ===== */
+.luxury-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(201, 162, 39, 0.3);
+  transition: border-color 0.3s ease;
+  width: 100%;
+  padding: 1rem 0;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+}
+.luxury-input:focus {
+  outline: none;
+  border-bottom: 1px solid #C9A227;
+  box-shadow: none;
+}
+
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0; height: 1px;
+  bottom: -2px; left: 0;
+  background-color: #C9A227;
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after { width: 100%; }
