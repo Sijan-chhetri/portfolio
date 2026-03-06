@@ -60,10 +60,20 @@
         },
       };
     </script>
-    <script type="module" crossorigin src="/portfolio/assets/index-C16AmStZ.js"></script>
+    <script type="module" crossorigin src="/portfolio/assets/index-fZOxtsjg.js"></script>
     <link rel="stylesheet" crossorigin href="/portfolio/assets/index-DmN3Bj3T.css">
   </head>
   <body>
+    <!-- Apply dark class BEFORE React renders to prevent flash of white -->
+    <script>
+      (function() {
+        var saved = localStorage.getItem('sijan-dark-mode');
+        // Default to dark if no preference saved
+        if (saved === null || saved === 'true') {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
     <div id="root"></div>
   </body>
 </html>
