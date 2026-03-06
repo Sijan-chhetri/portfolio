@@ -62,6 +62,16 @@
     </script>
   </head>
   <body>
+    <!-- Apply dark class BEFORE React renders to prevent flash of white -->
+    <script>
+      (function() {
+        var saved = localStorage.getItem('sijan-dark-mode');
+        // Default to dark if no preference saved
+        if (saved === null || saved === 'true') {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
