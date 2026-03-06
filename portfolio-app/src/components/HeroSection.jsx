@@ -54,7 +54,7 @@ export default function HeroSection() {
               Full-Stack Software Engineer
             </span>
             <h1 className="text-5xl md:text-8xl font-display italic tracking-tight text-slate-900 dark:text-[#f8f5f0]">
-              Sija Katuwal Chhetri
+              Sijan Katuwal Chhetri
             </h1>
             <p className="text-sm md:text-lg font-light tracking-[0.4em] uppercase text-slate-400">
               Python <span className="text-primary mx-2">•</span> Django{" "}

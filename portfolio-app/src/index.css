@@ -55,19 +55,25 @@
 
 /* ===== Contact Section ===== */
 .luxury-input {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid rgba(201, 162, 39, 0.3);
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(201, 162, 39, 0.3) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
   transition: border-color 0.3s ease;
   width: 100%;
   padding: 1rem 0;
   font-size: 0.875rem;
   letter-spacing: 0.05em;
+  color: inherit;
 }
 .luxury-input:focus {
-  outline: none;
-  border-bottom: 1px solid #C9A227;
-  box-shadow: none;
+  outline: none !important;
+  border-bottom: 1px solid #C9A227 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
 }
 
 .nav-link {
