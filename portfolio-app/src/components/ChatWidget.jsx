@@ -1,5 +1,28 @@
 import { useState, useRef, useEffect } from "react";
-import OpenAI from "openai";
+
+// ─── Call OpenAI via fetch — no SDK needed, avoids import-time crash ──
+async function callOpenAI(messages) {
+  const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
+  if (!apiKey) return null;
+
+  const res = await fetch("https://api.openai.com/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify({
+      model: "gpt-4o-mini",
+      messages,
+      max_tokens: 200,
+      temperature: 0.7,
+    }),
+  });
+
+  if (!res.ok) throw new Error(`OpenAI error: ${res.status}`);
+  const data = await res.json();
+  return data.choices[0].message.content;
+}
 
 const SYSTEM_PROMPT = `You are Sijan's personal AI assistant on his portfolio website. 
 You represent Sijan Katuwal Chhetri, a full-stack software engineer based in Kathmandu, Nepal.
@@ -81,7 +104,6 @@ export default function ChatWidget() {
   ]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
-  const [hasKey] = useState(!!import.meta.env.VITE_OPENAI_API_KEY);
   const bottomRef = useRef(null);
   const inputRef = useRef(null);
 
@@ -113,22 +135,19 @@ export default function ChatWidget() {
 
     try {
       let reply;
-      if (!hasKey) {
+      if (!import.meta.env.VITE_OPENAI_API_KEY) {
         await new Promise((r) => setTimeout(r, 700));
         reply = getFallbackReply(userText);
       } else {
         const history = messages.map((m) => ({ role: m.role, content: m.content }));
-        const res = await getClient().chat.completions.create({
-          model: "gpt-4o-mini",
-          messages: [
-            { role: "system", content: SYSTEM_PROMPT },
-            ...history,
-            { role: "user", content: userText },
-          ],
-          max_tokens: 200,
-          temperature: 0.7,
-        });
-        reply = res.choices[0].message.content;
+        reply = await callOpenAI([
+          { role: "system", content: SYSTEM_PROMPT },
+          ...history,
+          { role: "user", content: userText },
+        ]);
+        if (!reply) {
+          reply = getFallbackReply(userText);
+        }
       }
       setMessages((m) => [...m, { role: "assistant", content: reply, suggestions: followUps }]);
     } catch (err) {
