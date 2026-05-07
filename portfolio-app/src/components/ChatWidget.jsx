@@ -63,10 +63,12 @@ function getFollowUps(lastQuestion) {
   return others.sort(() => Math.random() - 0.5).slice(0, 4);
 }
 
-const client = new OpenAI({
-  apiKey: import.meta.env.VITE_OPENAI_API_KEY,
-  dangerouslyAllowBrowser: true,
-});
+// Client is created lazily inside sendMessage to avoid crashing when no key is set
+const getClient = () =>
+  new OpenAI({
+    apiKey: import.meta.env.VITE_OPENAI_API_KEY || "no-key",
+    dangerouslyAllowBrowser: true,
+  });
 
 export default function ChatWidget() {
   const [open, setOpen] = useState(false);
@@ -116,7 +118,7 @@ export default function ChatWidget() {
         reply = getFallbackReply(userText);
       } else {
         const history = messages.map((m) => ({ role: m.role, content: m.content }));
-        const res = await client.chat.completions.create({
+        const res = await getClient().chat.completions.create({
           model: "gpt-4o-mini",
           messages: [
             { role: "system", content: SYSTEM_PROMPT },
