@@ -128,7 +128,7 @@ function ProjectModal({ project, onClose }) {
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-20 w-9 h-9 flex items-center justify-center bg-black/40 hover:bg-primary text-white transition-colors duration-200 rounded-sm"
+          className="absolute top-4 right-4 z-20 w-9 h-9 flex items-center justify-center bg-black/40 hover:bg-[#0f172a] dark:hover:bg-primary text-white transition-colors duration-200 rounded-sm"
           aria-label="Close modal"
         >
           <span className="material-icons-outlined text-lg">close</span>
@@ -143,7 +143,7 @@ function ProjectModal({ project, onClose }) {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
           <div className="absolute bottom-0 left-0 p-6">
-            <span className="text-[10px] tracking-[0.3em] uppercase text-primary font-bold mb-2 block">
+            <span className="text-[10px] tracking-[0.3em] uppercase text-[#0f172a] dark:text-primary font-bold mb-2 block">
               {project.tag}
             </span>
             <h3 className="font-display text-2xl md:text-3xl font-bold text-white leading-tight">
@@ -161,7 +161,7 @@ function ProjectModal({ project, onClose }) {
 
           {/* Gallery */}
           <div>
-            <h4 className="text-[10px] tracking-[0.3em] uppercase text-primary font-bold mb-4">
+            <h4 className="text-[10px] tracking-[0.3em] uppercase text-[#0f172a] dark:text-primary font-bold mb-4">
               Gallery
             </h4>
             <div className="grid grid-cols-2 gap-3">
@@ -182,7 +182,7 @@ function ProjectModal({ project, onClose }) {
             {project.tag.split(" · ").map((tech) => (
               <span
                 key={tech}
-                className="text-[10px] uppercase tracking-wider px-3 py-1 border border-primary/30 text-primary bg-primary/5"
+                className="text-[10px] uppercase tracking-wider px-3 py-1 border border-[#0f172a]/30 dark:border-primary/30 text-[#0f172a] dark:text-primary bg-[#0f172a]/5 dark:bg-primary/5"
               >
                 {tech}
               </span>
@@ -196,6 +196,18 @@ function ProjectModal({ project, onClose }) {
 
 export default function ProjectsSection() {
   const [selected, setSelected] = useState(null);
+  const [showAll, setShowAll] = useState(false);
+  const [page, setPage] = useState(0);
+
+  const ITEMS_PER_PAGE = 6;
+  const totalPages = Math.ceil(projects.length / ITEMS_PER_PAGE);
+
+  const visibleProjects = showAll
+    ? projects
+    : projects.slice(page * ITEMS_PER_PAGE, page * ITEMS_PER_PAGE + ITEMS_PER_PAGE);
+
+  const handlePrev = () => setPage((p) => Math.max(0, p - 1));
+  const handleNext = () => setPage((p) => Math.min(totalPages - 1, p + 1));
 
   return (
     <section id="projects" className="py-24 px-8 bg-slate-50 dark:bg-[#01040a]">
@@ -203,26 +215,42 @@ export default function ProjectsSection() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <h3 className="text-primary font-display italic text-xl mb-2">
+            <h3 className="text-[#0f172a] dark:text-primary font-display italic text-xl mb-2">
               Selected Works
             </h3>
             <h2 className="font-display text-4xl md:text-5xl font-bold dark:text-white text-slate-900">
               The Project Showcase
             </h2>
           </div>
-          <div className="flex gap-4">
-            <button className="p-3 ivory-border dark:border-slate-800 hover:bg-primary hover:text-white transition-all text-slate-700 dark:text-slate-200">
-              <span className="material-icons-outlined">west</span>
-            </button>
-            <button className="p-3 ivory-border dark:border-slate-800 hover:bg-primary hover:text-white transition-all text-slate-700 dark:text-slate-200">
-              <span className="material-icons-outlined">east</span>
-            </button>
-          </div>
+          {/* Pagination arrows — only shown when not in showAll mode */}
+          {!showAll && totalPages > 1 && (
+            <div className="flex items-center gap-4">
+              <button
+                onClick={handlePrev}
+                disabled={page === 0}
+                className="p-3 ivory-border dark:border-slate-800 hover:bg-[#0f172a] dark:hover:bg-primary hover:text-white transition-all text-slate-700 dark:text-slate-200 disabled:opacity-30 disabled:cursor-not-allowed"
+                aria-label="Previous page"
+              >
+                <span className="material-icons-outlined">west</span>
+              </button>
+              <span className="text-[10px] uppercase tracking-widest text-slate-500 dark:text-slate-400">
+                {page + 1} / {totalPages}
+              </span>
+              <button
+                onClick={handleNext}
+                disabled={page === totalPages - 1}
+                className="p-3 ivory-border dark:border-slate-800 hover:bg-[#0f172a] dark:hover:bg-primary hover:text-white transition-all text-slate-700 dark:text-slate-200 disabled:opacity-30 disabled:cursor-not-allowed"
+                aria-label="Next page"
+              >
+                <span className="material-icons-outlined">east</span>
+              </button>
+            </div>
+          )}
         </div>
 
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {projects.map((p) => (
+          {visibleProjects.map((p) => (
             <div
               key={p.title}
               onClick={() => setSelected(p)}
@@ -230,7 +258,7 @@ export default function ProjectsSection() {
                 p.stagger ? "lg:translate-y-12" : ""
               }`}
             >
-              <div className="relative overflow-hidden ivory-border dark:border-slate-800 bg-white dark:bg-background-dark p-3 transition-all duration-500 hover:shadow-xl hover:shadow-primary/10">
+              <div className="relative overflow-hidden ivory-border dark:border-slate-800 bg-white dark:bg-background-dark p-3 transition-all duration-500 hover:shadow-xl hover:shadow-[#0f172a]/10 dark:hover:shadow-primary/10">
                 <div className="overflow-hidden aspect-[4/5] relative">
                   <img
                     alt={p.title}
@@ -238,19 +266,18 @@ export default function ProjectsSection() {
                     src={p.img}
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-all duration-500" />
-                  {/* "View project" overlay */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                    <div className="flex items-center gap-2 bg-black/60 backdrop-blur-sm px-5 py-2.5 text-white text-xs uppercase tracking-widest font-serif border border-white/20">
+                    <div className="flex items-center gap-2 bg-[#0f172a]/80 dark:bg-black/60 backdrop-blur-sm px-5 py-2.5 text-white text-xs uppercase tracking-widest font-serif border border-white/20">
                       <span className="material-icons-outlined text-sm">open_in_full</span>
                       View Project
                     </div>
                   </div>
                 </div>
                 <div className="mt-8 mb-4 px-2">
-                  <span className="text-[10px] tracking-[0.3em] uppercase text-primary font-bold mb-3 block">
+                  <span className="text-[10px] tracking-[0.3em] uppercase text-[#0f172a] dark:text-primary font-bold mb-3 block">
                     {p.tag}
                   </span>
-                  <h4 className="font-display text-2xl font-bold mb-3 group-hover:text-primary transition-colors dark:text-white text-slate-900">
+                  <h4 className="font-display text-2xl font-bold mb-3 group-hover:text-[#0f172a] dark:group-hover:text-primary transition-colors dark:text-white text-slate-900">
                     {p.title}
                   </h4>
                   <p className="text-sm font-light text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2">
@@ -261,6 +288,30 @@ export default function ProjectsSection() {
             </div>
           ))}
         </div>
+
+        {/* Show More / Show Less button */}
+        {projects.length > ITEMS_PER_PAGE && (
+          <div className="flex justify-center mt-16">
+            <button
+              onClick={() => { setShowAll((v) => !v); setPage(0); }}
+              className="group relative px-12 py-4 border border-[#0f172a]/40 dark:border-primary/40 text-[#0f172a] dark:text-primary font-serif uppercase text-xs tracking-widest overflow-hidden transition-all duration-300 hover:border-[#0f172a] dark:hover:border-primary"
+            >
+              <span className="relative z-10 flex items-center gap-3">
+                <span className="material-icons-outlined text-sm">
+                  {showAll ? "expand_less" : "expand_more"}
+                </span>
+                {showAll ? "Show Less" : `View All Projects (${projects.length})`}
+              </span>
+              <div className="absolute inset-0 bg-[#0f172a] dark:bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+              <span className="absolute inset-0 z-10 flex items-center justify-center gap-3 text-white dark:text-background-dark font-serif uppercase text-xs tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span className="material-icons-outlined text-sm">
+                  {showAll ? "expand_less" : "expand_more"}
+                </span>
+                {showAll ? "Show Less" : `View All Projects (${projects.length})`}
+              </span>
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Modal */}

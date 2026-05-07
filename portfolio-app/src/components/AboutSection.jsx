@@ -10,7 +10,7 @@ export default function AboutSection() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
         {/* Portrait */}
         <div className="lg:col-span-5 relative group">
-          <div className="absolute -inset-4 border border-primary/20 translate-x-2 translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-700"></div>
+          <div className="absolute -inset-4 border border-[#0f172a]/20 dark:border-primary/20 translate-x-2 translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-700"></div>
           <img
             alt="Sijan Katuwal Chhetri"
             className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-1000 relative z-10 shadow-2xl"
@@ -21,7 +21,7 @@ export default function AboutSection() {
 
         {/* Text */}
         <div className="lg:col-span-7 flex flex-col justify-center h-full pt-8 lg:pt-0">
-          <span className="text-primary tracking-[0.3em] text-xs font-medium uppercase mb-4 block">
+          <span className="text-[#0f172a] dark:text-primary tracking-[0.3em] text-xs font-medium uppercase mb-4 block">
             The Developer
           </span>
           <h2 className="font-display text-5xl md:text-6xl mb-8 leading-tight italic text-slate-800 dark:text-[#f8f5f0]">
@@ -73,7 +73,7 @@ export default function AboutSection() {
             ].map((tech) => (
               <span
                 key={tech}
-                className="px-4 py-1.5 border border-primary/30 text-[10px] uppercase tracking-widest text-primary font-medium"
+                className="px-4 py-1.5 border border-[#0f172a]/30 dark:border-primary/30 text-[10px] uppercase tracking-widest text-[#0f172a] dark:text-primary font-medium"
               >
                 {tech}
               </span>
@@ -87,7 +87,7 @@ export default function AboutSection() {
               { icon: "web", title: "Front-End Dev", sub: "React · TypeScript · CSS" },
             ].map((item) => (
               <div key={item.title} className="flex items-start gap-4">
-                <span className="material-symbols-outlined text-primary text-3xl">
+                <span className="material-symbols-outlined text-[#0f172a] dark:text-primary text-3xl">
                   {item.icon}
                 </span>
                 <div>
@@ -109,7 +109,7 @@ export default function AboutSection() {
               target="_blank"
               rel="noreferrer"
               download="Sijan_Katuwal_Chhetri_CV.pdf"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-background-dark font-serif uppercase text-xs tracking-[0.2em] hover:shadow-[0_0_20px_rgba(201,162,39,0.3)] transition-all duration-300 group"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-[#0f172a] dark:bg-primary text-white dark:text-background-dark font-serif uppercase text-xs tracking-[0.2em] hover:shadow-[0_0_20px_rgba(15,23,42,0.3)] dark:hover:shadow-[0_0_20px_rgba(201,162,39,0.3)] transition-all duration-300 group"
             >
               <span className="material-symbols-outlined text-lg group-hover:bounce">download</span>
               Download My CV

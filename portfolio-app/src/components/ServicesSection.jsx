@@ -35,7 +35,7 @@ export default function ServicesSection() {
   return (
     <section className="py-24 max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
       <div className="text-center mb-16">
-        <span className="text-primary tracking-[0.3em] text-xs font-medium uppercase mb-4 block">
+        <span className="text-[#0f172a] dark:text-primary tracking-[0.3em] text-xs font-medium uppercase mb-4 block">
           What I Do
         </span>
         <h2 className="font-display text-4xl italic text-slate-800 dark:text-[#f8f5f0]">
@@ -46,9 +46,9 @@ export default function ServicesSection() {
         {services.map((s) => (
           <div
             key={s.title}
-            className="group p-8 border-l border-stone-200 dark:border-stone-800 hover:border-primary transition-colors duration-500"
+            className="group p-8 border-l border-stone-300 dark:border-stone-800 hover:border-[#0f172a] dark:hover:border-primary transition-colors duration-500"
           >
-            <span className="material-symbols-outlined text-stone-300 group-hover:text-primary text-4xl mb-6 transition-colors duration-500 block">
+            <span className="material-symbols-outlined text-stone-400 dark:text-stone-300 group-hover:text-[#0f172a] dark:group-hover:text-primary text-4xl mb-6 transition-colors duration-500 block">
               {s.icon}
             </span>
             <h4 className="font-display text-2xl mb-4 text-slate-800 dark:text-[#f8f5f0]">

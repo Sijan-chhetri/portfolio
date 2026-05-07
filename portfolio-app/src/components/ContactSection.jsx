@@ -103,12 +103,12 @@ export default function ContactSection() {
               className="w-full aspect-[4/5] object-cover grayscale-[40%] group-hover:grayscale-0 transition-all duration-700"
               src={profileImg}
             />
-            <div className="absolute inset-0 border border-primary/20 m-4 pointer-events-none"></div>
+            <div className="absolute inset-0 border border-[#0f172a]/20 dark:border-primary/20 m-4 pointer-events-none"></div>
           </div>
           <div className="space-y-6">
             <h2 className="font-garamond text-5xl lg:text-7xl font-light leading-tight text-slate-800 dark:text-[#f8f5f0]">
               Let&apos;s build something <br />
-              <span className="italic text-primary">great together</span>.
+              <span className="italic text-[#0f172a] dark:text-primary">great together</span>.
             </h2>
             <p className="max-w-md text-sm leading-relaxed font-light opacity-70 tracking-wide font-montserrat text-slate-700 dark:text-stone-300">
               Open to freelance projects, full-time opportunities, and technical
@@ -119,12 +119,12 @@ export default function ContactSection() {
         </div>
 
         {/* Right: form */}
-        <div className="bg-stone-50/50 dark:bg-stone-900/20 p-8 lg:p-12 border border-primary/5">
+        <div className="bg-stone-50/50 dark:bg-stone-900/20 p-8 lg:p-12 border border-[#0f172a]/10 dark:border-primary/5">
           <div className="mb-8">
             <h3 className="font-garamond text-3xl font-light mb-2 text-slate-800 dark:text-[#f8f5f0]">
               Get In Touch
             </h3>
-            <div className="h-px w-12 bg-primary mb-8"></div>
+            <div className="h-px w-12 bg-[#0f172a] dark:bg-primary mb-8"></div>
 
             {/* Contact info row */}
             <div className="flex flex-wrap gap-x-6 gap-y-4">
@@ -133,7 +133,7 @@ export default function ContactSection() {
                 href={SOCIAL_LINKS.phone}
                 className="group flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity"
               >
-                <span className="flex items-center justify-center w-7 h-7 border border-primary/30 text-primary shrink-0">
+                <span className="flex items-center justify-center w-7 h-7 border border-[#0f172a]/30 dark:border-primary/30 text-[#0f172a] dark:text-primary shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.24 1.02l-2.21 2.2z"/>
                   </svg>
@@ -152,7 +152,7 @@ export default function ContactSection() {
                 href={SOCIAL_LINKS.email}
                 className="group flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity"
               >
-                <span className="flex items-center justify-center w-7 h-7 border border-primary/30 text-primary shrink-0">
+                <span className="flex items-center justify-center w-7 h-7 border border-[#0f172a]/30 dark:border-primary/30 text-[#0f172a] dark:text-primary shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
                   </svg>
@@ -173,7 +173,7 @@ export default function ContactSection() {
                 rel="noreferrer"
                 className="group flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity"
               >
-                <span className="flex items-center justify-center w-7 h-7 border border-primary/30 text-primary shrink-0">
+                <span className="flex items-center justify-center w-7 h-7 border border-[#0f172a]/30 dark:border-primary/30 text-[#0f172a] dark:text-primary shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                   </svg>
@@ -299,7 +299,7 @@ export default function ContactSection() {
               <button
                 type="submit"
                 disabled={status === STATUS.SENDING || !canSubmit}
-                className="group relative px-12 py-5 bg-primary text-white text-[10px] uppercase tracking-[0.4em] font-medium overflow-hidden transition-all duration-500 disabled:opacity-60 disabled:cursor-not-allowed"
+                className="group relative px-12 py-5 bg-[#0f172a] dark:bg-primary text-white dark:text-white text-[10px] uppercase tracking-[0.4em] font-medium overflow-hidden transition-all duration-500 disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 <span className="relative z-10 flex items-center gap-3">
                   {status === STATUS.SENDING ? (

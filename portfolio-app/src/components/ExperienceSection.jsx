@@ -34,7 +34,7 @@ export default function ExperienceSection() {
       <div className="max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
         {/* Heading */}
         <div className="text-center mb-24">
-          <span className="text-primary tracking-[0.3em] text-xs font-medium uppercase mb-4 block">
+          <span className="text-[#0f172a] dark:text-primary tracking-[0.3em] text-xs font-medium uppercase mb-4 block">
             Chronicle
           </span>
           <h2 className="font-display text-5xl italic text-slate-800 dark:text-[#f8f5f0]">
@@ -44,7 +44,7 @@ export default function ExperienceSection() {
 
         {/* Timeline */}
         <div className="relative max-w-4xl mx-auto">
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 timeline-line -translate-x-1/2 opacity-30"></div>
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 -translate-x-1/2 opacity-30 w-px bg-gradient-to-b from-transparent via-[#0f172a] dark:via-primary to-transparent"></div>
 
           <div className="space-y-24 relative">
             {experiences.map((exp) => (
@@ -60,7 +60,7 @@ export default function ExperienceSection() {
                       : "md:pr-16 md:text-right"
                   }`}
                 >
-                  <span className="text-primary font-display italic text-lg mb-2 block">
+                  <span className="text-[#0f172a] dark:text-primary font-display italic text-lg mb-2 block">
                     {exp.period}
                   </span>
                   <h3 className="text-2xl font-display mb-1 text-slate-800 dark:text-[#f8f5f0]">
@@ -76,7 +76,7 @@ export default function ExperienceSection() {
                 </div>
 
                 {/* Diamond dot */}
-                <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-background-light dark:bg-background-dark border-2 border-primary rotate-45 z-10"></div>
+                <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-background-light dark:bg-background-dark border-2 border-[#0f172a] dark:border-primary rotate-45 z-10"></div>
 
                 {/* Card side */}
                 <div

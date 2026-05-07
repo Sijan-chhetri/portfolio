@@ -6,6 +6,8 @@ import AboutSection from "./components/AboutSection";
 import ExperienceSection from "./components/ExperienceSection";
 import ServicesSection from "./components/ServicesSection";
 import ProjectsSection from "./components/ProjectsSection";
+import FAQSection from "./components/FAQSection";
+import ChatWidget from "./components/ChatWidget";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 import LoadingScreen from "./components/LoadingScreen";
@@ -40,8 +42,10 @@ export default function App() {
         <ExperienceSection />
         <ServicesSection />
         <ProjectsSection />
+        <FAQSection />
         <ContactSection />
         <Footer />
+        <ChatWidget />
       </div>
     </div>
   );

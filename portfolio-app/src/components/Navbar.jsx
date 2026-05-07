@@ -26,7 +26,7 @@ export default function Navbar({ darkMode, toggleDark }) {
           : "bg-transparent"
       }`}
     >
-      <div className="text-xl font-serif tracking-[0.2em] uppercase text-primary">
+      <div className="text-xl font-serif tracking-[0.2em] uppercase text-[#0f172a] dark:text-primary">
         Sijan Katuwal Chhetri
       </div>
 
@@ -38,14 +38,14 @@ export default function Navbar({ darkMode, toggleDark }) {
             href={l.href}
             target={l.isExternal ? "_blank" : undefined}
             rel={l.isExternal ? "noreferrer" : undefined}
-            className="hover:text-primary transition-colors"
+            className="hover:text-[#0f172a] dark:hover:text-primary transition-colors"
           >
             {l.label}
           </a>
         ))}
         <a
           href="#contact"
-          className="hover:text-primary transition-colors border border-primary/30 px-6 py-2"
+          className="border border-[#0f172a]/40 dark:border-primary/30 px-6 py-2 hover:text-[#0f172a] dark:hover:text-primary hover:border-[#0f172a] dark:hover:border-primary transition-colors"
         >
           Contact
         </a>
@@ -54,7 +54,7 @@ export default function Navbar({ darkMode, toggleDark }) {
       {/* Dark mode toggle */}
       <button
         onClick={toggleDark}
-        className="p-2 border border-primary/20 hover:border-primary transition-colors text-primary ml-4"
+        className="p-2 border border-[#0f172a]/30 dark:border-primary/20 hover:border-[#0f172a] dark:hover:border-primary transition-colors text-[#0f172a] dark:text-primary ml-4"
         aria-label="Toggle dark mode"
       >
         <span className="material-symbols-outlined text-[20px]">
@@ -64,7 +64,7 @@ export default function Navbar({ darkMode, toggleDark }) {
 
       {/* Mobile menu button */}
       <button
-        className="md:hidden text-primary ml-2"
+        className="md:hidden text-[#0f172a] dark:text-primary ml-2"
         onClick={() => setMenuOpen((o) => !o)}
         aria-label="Menu"
       >
@@ -82,7 +82,7 @@ export default function Navbar({ darkMode, toggleDark }) {
               href={l.href}
               target={l.isExternal ? "_blank" : undefined}
               rel={l.isExternal ? "noreferrer" : undefined}
-              className="uppercase text-[10px] tracking-[0.3em] text-slate-600 dark:text-slate-300 hover:text-primary transition-colors"
+              className="uppercase text-[10px] tracking-[0.3em] text-slate-600 dark:text-slate-300 hover:text-[#0f172a] dark:hover:text-primary transition-colors"
               onClick={() => setMenuOpen(false)}
             >
               {l.label}
