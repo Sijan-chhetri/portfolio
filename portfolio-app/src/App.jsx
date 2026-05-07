@@ -21,12 +21,17 @@ export default function App() {
     setDarkMode((d) => {
       const next = !d;
       localStorage.setItem("sijan-dark-mode", String(next));
+      if (next) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
       return next;
     });
   };
 
   return (
-    <div className={darkMode ? "dark" : ""}>
+    <div>
       {!loaded && <LoadingScreen onDone={() => setLoaded(true)} />}
       <div className="bg-background-light dark:bg-background-dark text-slate-800 dark:text-[#f8f5f0] font-sans antialiased overflow-x-hidden">
         <Navbar darkMode={darkMode} toggleDark={toggleDark} />
