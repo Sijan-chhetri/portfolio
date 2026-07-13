@@ -13,16 +13,16 @@
     <meta name="author" content="Sijan Katuwal Chhetri" />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow" />
-    <link rel="canonical" href="https://sijankatuwalchhetri.com.np/" />
+    <link rel="canonical" href="https://sijan-chhetri.github.io/portfolio/" />
 
     <!-- ═══════════════════════════════════════════════════════
          OPEN GRAPH (Facebook, LinkedIn previews)
     ═══════════════════════════════════════════════════════ -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://sijankatuwalchhetri.com.np/" />
+    <meta property="og:url" content="https://sijan-chhetri.github.io/portfolio/" />
     <meta property="og:title" content="Sijan Katuwal Chhetri — Full-Stack Software Engineer" />
     <meta property="og:description" content="Full-stack software engineer specialising in Python, Django, React, and Flutter. Based in Kathmandu, Nepal. Available for freelance and full-time work." />
-    <meta property="og:image" content="https://sijankatuwalchhetri.com.np/profile.png" />
+    <meta property="og:image" content="https://sijan-chhetri.github.io/portfolio/profile.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Sijan Katuwal Chhetri — Full-Stack Software Engineer" />
@@ -35,7 +35,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Sijan Katuwal Chhetri — Full-Stack Software Engineer" />
     <meta name="twitter:description" content="Full-stack software engineer specialising in Python, Django, React, and Flutter. Based in Kathmandu, Nepal." />
-    <meta name="twitter:image" content="https://sijankatuwalchhetri.com.np/profile.png" />
+    <meta name="twitter:image" content="https://sijan-chhetri.github.io/portfolio/profile.png" />
     <meta name="twitter:image:alt" content="Sijan Katuwal Chhetri Portfolio" />
 
     <!-- ═══════════════════════════════════════════════════════
@@ -47,8 +47,8 @@
       "@type": "Person",
       "name": "Sijan Katuwal Chhetri",
       "alternateName": "Sijan Chhetri",
-      "url": "https://sijankatuwalchhetri.com.np/",
-      "image": "https://sijankatuwalchhetri.com.np/profile.png",
+      "url": "https://sijan-chhetri.github.io/portfolio/",
+      "image": "https://sijan-chhetri.github.io/portfolio/profile.png",
       "jobTitle": "Full-Stack Software Engineer",
       "description": "Full-stack software engineer specialising in Python, Django, React, and Flutter. Based in Kathmandu, Nepal.",
       "email": "sijanchhetri102@gmail.com",
@@ -82,7 +82,7 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Sijan Katuwal Chhetri Portfolio",
-      "url": "https://sijankatuwalchhetri.com.np/",
+      "url": "https://sijan-chhetri.github.io/portfolio/",
       "description": "Portfolio of Sijan Katuwal Chhetri, a full-stack software engineer based in Kathmandu, Nepal.",
       "author": {
         "@type": "Person",
@@ -149,6 +149,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+
+    <!-- gh-pages SPA redirect handler -->
+    <script>
+      (function() {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&family=Montserrat:wght@200;300;400&display=swap"
       rel="stylesheet"
@@ -157,7 +170,49 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
 
-
+    <!-- Tailwind CDN with config -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#C9A227",
+              "background-light": "#F8F5F0",
+              "background-dark": "#0f172a",
+              accent: "#1e293b",
+            },
+            fontFamily: {
+              display: ["Playfair Display", "serif"],
+              serif: ["Cinzel", "serif"],
+              garamond: ["Cormorant Garamond", "serif"],
+              sans: ["Inter", "sans-serif"],
+              montserrat: ["Montserrat", "sans-serif"],
+            },
+            animation: {
+              "slow-pan": "pan 20s ease-in-out infinite alternate",
+              float: "float 6s ease-in-out infinite",
+              "fade-in-up": "fadeInUp 1s ease-out forwards",
+            },
+            keyframes: {
+              pan: {
+                "0%": { transform: "scale(1.0) translate(0, 0)" },
+                "100%": { transform: "scale(1.05) translate(-1%, -1%)" },
+              },
+              float: {
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-20px)" },
+              },
+              fadeInUp: {
+                "0%": { opacity: "0", transform: "translateY(20px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
   </head>
   <body>
     <!-- Apply dark class BEFORE React renders to prevent flash of white -->
