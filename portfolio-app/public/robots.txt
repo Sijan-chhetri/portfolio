@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sijan-chhetri.github.io/portfolio/sitemap.xml
+Sitemap: https://sijankatuwalchhetri.com.np/sitemap.xml
